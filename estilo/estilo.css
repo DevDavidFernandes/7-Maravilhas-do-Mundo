@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Garantindo rolagem suave para a página */
+html {
+  scroll-behavior: smooth;  /* Isso garante que a rolagem da página será suave */
+}
+
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Montserrat", serif;
+  text-align: center;
+  background-color: #e5d2b0;
+  background-image: url("https://crella.sfo2.cdn.digitaloceanspaces.com/wp-content/uploads/2022/07/17180111/Topographic-Maps-Textures-Cover-3.24.jpg");
+  height: 100%;
+}
+
+#interface{
+  display: flex;
+  background-color: #252728;
+  color: #e5d2b0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+#interface h1{
+  margin: 0;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li{
+  margin-left: 20px;
+}
+
+.menu a{
+  color: #e5d2b0;
+  text-decoration: none;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.menu a:hover{
+  background-color: #7d7757;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+/* Estilos para o conteúdo em rolagem */
+main {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.content-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
+  width: 80%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px #79826A;
+  padding: 20px;
+}
+
+.content-box.reverse {
+  flex-direction: row-reverse;
+}
+
+.text-box {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.text-box h2 {
+  margin-bottom: 15px;
+}
+
+#sobre{
+  text-align: justify;
+}
+
+.text-box p {
+  font-size: 1.1em;
+  color: #333;
+}
+
+.image-box {
+  flex: 1;
+}
+
+.image-box img {
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 300px;
+  transition: 1.2s;
+}
+
+img:hover {
+  transition: 0.4s;
+  transform: scale(1.05);
+}
+
+/* Estilos do botão de rolar */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 50px;    /* Posição no canto inferior */
+  right: 20px;     /* Posição no canto direito */
+  background-color: #79826A;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 24px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: width 0.3s, height 0.3s, border-radius 0.3s, opacity 0.5s, transform 0.5s;  /* Transições suaves */
+  z-index: 1000;
+}
+
+/* Efeito hover no botão */
+#scrollTopBtn:hover {
+  width: 200px;   /* Expande o botão */
+  height: 50px;   /* Mantém a altura constante */
+  border-radius: 10px;
+  transform: scale(1.1);  /* Aumenta o tamanho do botão quando o mouse passa */
+}
+
+/* A seta dentro do botão */
+#scrollTopIcon {
+  font-size: 24px;  /* Tamanho da seta */
+}
+
+/* Estilo do texto do botão */
+#scrollTopText {
+  display: none;   /* Texto escondido inicialmente */
+  font-size: 14px;
+  margin-left: 10px;  /* Distância entre a seta e o texto */
+}
+
+/* Exibe o texto quando o botão é hover */
+#scrollTopBtn:hover #scrollTopText {
+  display: inline-block;
+}
+
+/* Botão de rolar desaparece suavemente */
+#scrollTopBtn.fade-out {
+  opacity: 0;
+  transform: translateY(-50px);  /* Move o botão para cima */
+}
+
+/* Estilizando a barra de rolagem */
+::-webkit-scrollbar {
+  width: 12px;  /* Largura da barra de rolagem */
+  height: 12px; /* Altura da barra de rolagem horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: #e5d2b0; /* Cor de fundo da barra de rolagem */
+  border-radius: 5px;  /* Borda arredondada do track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #79826A;  /* Cor da parte da barra de rolagem */
+  border-radius: 5px;  /* Bordas arredondadas da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7d7757;  /* Cor ao passar o mouse sobre o thumb */
+}
+
+/* Adiciona a animação de fade-in */
+.fade-in {
+    opacity: 0; /* Inicialmente invisível */
+    animation: fadeIn 1s forwards; /* Aparece de forma suave durante 2 segundos */
+}
+
+/* Definindo a animação de fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Se necessário, pode adicionar um delay */
+.fade-in-delay {
+    animation: fadeIn 2s forwards 0.5s; /* Atraso de 0.5s antes de começar a animação */
+}
+
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #252728;
+  color: #e5d2b0;
+  padding: 10px 20px;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+/* Usando o GIF como fundo */
+#intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% da altura da tela */
+    width: 100%; /* 100% da largura da tela */
+    background-image: url('https://media1.tenor.com/m/4ib_I2DjfukAAAAd/steven-universe-dancing-in-the-forest.gif');
+    background-size: cover; /* Faz o GIF cobrir toda a área */
+    background-position: center; /* Centraliza o GIF */
+    background-repeat: no-repeat; /* Evita que o GIF repita */
+    color: white; /* Cor do texto em cima do GIF */
+    text-align: center;
+    position: relative;
+}
+
+
+.gif-container img {
+    width: 100%; /* O GIF vai preencher toda a largura */
+    height: 100%; /* O GIF vai preencher toda a altura */
+    object-fit: cover; /* Ajusta o GIF para cobrir a área sem distorcer */
+    position: absolute; /* Garante que o GIF esteja fixo na área */
+    top: 0;
+    left: 0;
+}
+
+
+/* Definindo a animação de fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
